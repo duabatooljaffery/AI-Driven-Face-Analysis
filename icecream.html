@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Ad</title>
+    <style>
+        /* ... (all your CSS styles from style.css go here) ... */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #8E44AD;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        /* ... (the rest of your CSS) ... */
+
+        .title .smoot {
+            transition: color 0.3s ease;
+        }
+
+        .title .smoot:hover {
+            color: #FF0000;
+            cursor: pointer;
+        }
+
+        .tagline {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .tagline.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .image-area {
+            position: relative;
+        }
+
+        .sale-ribbon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #FF0000;
+            color: white;
+            padding: 5px 10px;
+            transform: rotate(-45deg);
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="lo">LO</span>
+                <span class="go">GO</span>
+            </div>
+        </header>
+        <main>
+            <div class="text-area">
+                <p class="tagline">A Treat You Can't Resist!</p>
+                <h1 class="title">
+                    <span class="smoot">SMOOT</span><br>
+                    <span class="cromy">CRMY</span>
+                </h1>
+                <p class="description">Bursting with Real <span class="blueberry">Blueberry</span> Flavor</p>
+            </div>
+            <div class="image-area">
+                <img src="icecream.png" alt="Blueberry Ice Cream">
+            </div>
+        </main>
+        <footer>
+            <div class="social-icons">
+                <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="email.png" alt="Email"></a>
+            </div>
+            <p class="handle">#HandleName</p>
+        </footer>
+    </div>
+
+    <script>
+        // ... (all your JavaScript from script.js goes here) ...
+        const smootElement = document.querySelector('.title .smoot');
+
+        smootElement.addEventListener('mouseover', () => {
+            smootElement.style.color = '#FF0000';
+        });
+
+        smootElement.addEventListener('mouseout', () => {
+            smootElement.style.color = '#F4D03F';
+        });
+
+        const tagline = document.querySelector('.tagline');
+
+        window.addEventListener('load', () => {
+            tagline.classList.add('show');
+        });
+
+        const imageArea = document.querySelector('.image-area');
+        const saleRibbon = document.createElement('div');
+        saleRibbon.classList.add('sale-ribbon');
+        saleRibbon.textContent = 'Sale!';
+        imageArea.appendChild(saleRibbon);
+
+        smootElement.addEventListener('click', () => {
+            alert('You clicked on SMOOT!');
+        });
+
+    </script>
+</body>
+</html>

@@ -61,5 +61,3 @@ python main.py
 
 For the full project or assistance, please contact **Dua Batool** at: **[duabatoolpk110@gmail.com](mailto:duabatoolpk110@gmail.com)**
 
-
-Do you want me to do that?
